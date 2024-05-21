@@ -1,0 +1,19 @@
+{
+  "name": "frontend-test-master",
+  "version": "1.0.0",
+  "description": "Test Front",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss/index.scss:css/styles.css"
+  },
+  "keywords": [
+    "Test",
+    "Front",
+    "Sass"
+  ],
+  "author": "rmaillo",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.1"
+  }
+}
