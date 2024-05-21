@@ -1,0 +1,105 @@
+//Menú filtros
+.sombrear {
+    opacity: .5;
+}
+
+.form {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s ease-in-out, opacity .5s linear;
+    background-color: white;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    
+    fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+        
+        .form-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 1rem .5rem .5rem .5rem;
+            
+        }
+            .text-form {
+                border-top: 1px solid lightgrey;
+                padding: .5rem;
+                display: flex;
+                justify-content: space-between;
+               
+                .form-check:checked {
+                    background-color: blue;
+                    color: white;
+                }
+            }
+            .text-form-last {
+                border-bottom: 1px solid lightgrey;
+                padding: .5rem;
+                margin-bottom: 1rem;
+            }
+        
+        
+        .btn-close-form {
+            border: 1px solid lightgrey;
+            border-radius: .3rem;
+            font-weight: bold;
+            float: right;
+            height: 2rem;
+            margin-right: 1.5rem;
+            text-align: center;
+            width: 2rem;
+        }
+        legend {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    
+        .form-btns {
+            background-color: lightgrey;
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            .btn-clean-form {
+                align-items: center;
+                border: none;
+                border-radius: 0.3rem;
+                bottom: 0.2rem;
+                display: flex;
+                font-weight: bold;
+                justify-content: center;
+                height: 1.8rem;
+                text-align: center;
+                text-transform: uppercase;
+                width: 30%;
+            }
+            .btn-filter-form {
+                align-items: center;
+                background-color: blue;
+                border: none;
+                border-radius: 0.3rem;
+                bottom: 0.2rem;
+                color: white;
+                display: flex;
+                font-weight: bold;
+                justify-content: center;
+                height: 1.8rem;
+                text-align: center;
+                text-transform: uppercase;
+                width: 30%;
+                img {
+                    filter: invert(1);
+                }
+            }
+        }
+        
+    }
+}
+
+.mostrar {
+    visibility: visible;
+    opacity: 1;
+}
+    

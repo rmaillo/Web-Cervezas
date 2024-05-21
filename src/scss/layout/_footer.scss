@@ -1,0 +1,50 @@
+footer {
+    background-color: black;
+    padding: .5rem 0 1rem 0;
+    text-transform: uppercase;
+    .help {
+        color: white;
+        text-align: center;
+        
+        h4 {
+            margin-bottom: .5rem;
+            text-transform: none;
+        }
+        .footer-figure {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            img {
+                background-color: white;
+                border-radius: 50%;
+                margin-bottom: .5rem;
+                padding: 1rem;
+            }
+        }
+    }
+    .footer-about {
+        background-color: white;
+        text-align: center;
+        nav {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 0 1rem 0;
+            a {
+                font-weight: bold;
+                padding: .5rem 0 .5rem 0;
+            }
+        }
+        .footer-insta {
+            border-top: 1px solid grey;
+            margin-left: 33%;
+            width: 33%;
+        }
+        img {
+            background-color: yellow;
+            border-radius: 50%;
+            filter: invert(1);
+            margin-top: 1rem;
+            padding: .5rem;
+        }
+    }
+}

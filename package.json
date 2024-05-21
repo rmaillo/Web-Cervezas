@@ -4,7 +4,7 @@
   "description": "Test Front",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/scss/index.scss:css/styles.css"
+    "sass": "sass --watch src/scss:build/css"
   },
   "keywords": [
     "Test",

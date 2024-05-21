@@ -3,161 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Cervezas</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="build/css/index.css">
 </head>
 <body>
-
-    <header>
+    <header class="header">
         <nav>
-            <a> 
-                <img class="nav" src="svg/menu.svg" alt="menu">
-            </a>
-            <a>
-                <img class="nav" src="svg/logo.svg" alt="logo">
-            </a>
-            <a>
-                <img class="nav" src="svg/search.svg" alt="search">
-            </a>
-            <a>
-                <img class="nav" src="svg/cart.svg" alt="cart">
-            </a>            
+            <div class="nav-icons">
+                <img src="src/svg/menu.svg" alt="menu">
+                <img src="src/svg/logo.svg" alt="logo">
+            </div>
+            <div class="nav-icons">
+                <img src="src/svg/search.svg" alt="search">
+                <img src="src/svg/cart.svg" alt="cart">
+            </div>        
         </nav>
     </header>
+    <button class="btn-filter">Filtrar <img src="src/svg/filters.svg" alt="filters"></button>
 
-    <section>
-        <div class="title">
-            <h1>Cervezas</h1>
-        </div>
-
-        <figure class="">
-            <img src="img/cassels.png" alt="cassels">
-            <figcaption>Cassels Milk Stou</figcaption>
-            <p>Cassels & Sons Brewing. Cerveza porter y stout</p>
-            <p>$75.000</p>
-            <button>Agregar</button>
-        </figure>
-
-        <figure class="">
-            <img src="img/camba.png" alt="camaba">
-            <figcaption>Camba Pale Ale</figcaption>
-            <p>La Souche Franc-Bois d'hiver.Cerveze pale.</p>
-            <p>$85.000</p>
-            <button>Agregar</button>
-        </figure>
-
-        <figure class="">
-            <img src="img/votus.png" alt="votus">
-            <figcaption>Votus Nº 001</figcaption>
-            <p>India Pale Ale del año 2019. Nº 001 Red IPA</p>
-            <p>$75.000</p>
-            <button>Agregar</button>
-        </figure>
-
-        <figure class="">
-            <img src="img/prairie-artisian.png" alt="prairie-artisian">
-            <figcaption>Prairie Artisian</figcaption>
-            <p>Ales Prairie Noir Whiskey Barrel Aged Imperial Stout 12oz.</p>
-            <p>$85.000</p>
-            <button>Agregar</button>
-        </figure>
-
-        <figure class="">
-            <img src="img/lost-abbey.png" alt="lost-abbey">
-            <figcaption>Lost Abbey</figcaption>
-            <p>The Lost Abbey Citrus Sin American Wild Ale 750ml.</p>
-            <p>$75.000</p>
-            <button>Agregar</button>
-        </figure>
-
-        <figure class="">
-            <img src="img/prairie.png" alt="prairie">
-            <figcaption>Prairie</figcaption>
-            <p>Cassels & Sons Brewing.</p>
-            <p>Cerveza porter y stout</p>
-            <p>$75.000</p>
-            <button>Agregar</button>
-        </figure>
-
-        <figure class="">
-            <img src="img/redrice.png" alt="redrice">
-            <figcaption>Redrice</figcaption>
-            <p>Hitachino Nest Beer Red Rice Ale 330ml.</p>
-            <p>$85.000</p>
-            <button>Agregar</button>
-        </figure>
-
-        <figure class="">
-            <img src="img/cascade.png" alt="cascade">
-            <figcaption>cascade</figcaption>
-            <p>Cascade Brewing 2017 Brunch Line BA NORTHWEST Sour Ale.</p>
-            <p>$175.000</p>
-            <button>Agregar</button>
-        </figure>
-
-        <figure class="">
-            <img src="img/topa.png" alt="topa">
-            <figcaption>Topa Topa</figcaption>
-            <p>Topa Topa BREWING CO. 5th Year Anniversary clear Ipa 16oz.</p>
-            <p>$85.000</p>
-            <button>Agregar</button>
-        </figure>
+    <section class="section-prim">
+        <h1>Cervezas</h1>
 
 
-        <figure class="">
-            <img src="img/mira.png" alt="mira">
-            <figcaption>Mira Brune Nº6</figcaption>
-            <p>Brown Ale, Brown Mira American Style.</p>
-            <p>$375.000</p>
-            <button>Agregar</button>
-        </figure>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
 
-        <div>
-            <p>Sigue mercando</p>
-            <p>Vinos</p>
-            <img src="svg/arrow-right.svg" alt="arrow">
-        </div>
+        <script id="products-template" type="text/x-handlebars-template">
+
+            {{#each products}}
+            <div class="product">
+                    <img src="src/img/{{img}}" alt="{{img}}">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                    <h3>${{price}}</h3>  
+                    <button class="btn-agregar">Agregar</button>
+            </div>
+            {{/each}}
+
+        </script>
+
+        <div id="result"></div>
 
     </section>
+    <section class="section-sec">
+        <div>
+            <h4>Sigue mercando</h4>
+            <h2>Vinos</h2>
+        </div>
+        <div>
+            <img src="src/svg/arrow-right.svg" alt="arrow-right">
+        </div>
+    </section>
+    <section>
+        <div class="form">
+            <form  action="">
+                <fieldset>
+                    <div class="form-container">
+                        <legend class="btn-close-form">x</legend>
+                        <div class="form-title"><label for="text" >Filtros</label></div>
+                        <div class="text-form">
+                            <label for="text">Rubia</label>
+                            <input type="checkbox" class="form-check" id="1" value="filterId1">
+                        </div>
+                        <div class="text-form">
+                            <label for="text">Morena</label>
+                            <input type="checkbox" class="form-check" id="2" value="filterId2">
+                        </div>
+                        <div class="text-form text-form-last">
+                            <label for="text">Roja</label>
+                            <input type="checkbox" class="form-check" id="3" value="filterId3">
+                        </div>
+                    </div>
 
-    <div class="btn-flotante">
-        <button>
-            Filtrar
-            <img src="svg/filters.svg" alt="filters">
-        </button>
-    </div>
-
+                    <div class="form-btns">
+                        <button type="button" class="btn-clean-form">Limpiar</button>
+                        <button type="button" class="btn-filter-form">Filtrar <img src="src/svg/filters.svg" alt="filters"></button>
+                    </div>
+                </fieldset>
+                
+            </form>
+        </div>
+    </section>
     <footer>
-        <div class="nav">
-            <p>¿Podemos ayudarte?</p>
-            <div class="icons">
-                <figure>
-                <img src="svg/intercom.svg" alt="chat">
-                <figcaption>Chat</figcaption>
-                </figure>
-                <figure>
-                    <img src="svg/phone.svg" alt="phone">
-                    <figcaption>llamar</figcaption>
-                </figure>
+        <div>
+            <div class="help">
+                <h4>¿Podemos ayudarte?</h4>
+                <div class="footer-figure">
+                    <figure>
+                        <img src="src/svg/intercom.svg" alt="intercom">
+                        <figcaption>Chat</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="src/svg/phone.svg" alt="phone">
+                        <figcaption>Llamar</figcaption>
+                    </figure>
+                </div>
             </div>
+            <div class="footer-about">
+                <nav>
+                    <a>Sobre nosotros</a>
+                    <a>Medidas de seguridad (covid-19)</a>
+                    <a>Cómo mercar</a>
+                    <a>Proveedores</a>
+                    <a>Contáctenos</a>
+                    <a>Zona de cobertura</a>
+                </nav>
+            <div class="footer-insta">
+                <img src="src/svg/instagram.svg" alt="instagram">   
+            </div>
+            <h6>Política de tratamiento de datos personales</h6>
         </div>
 
-        <nav>
-            <a>Sobre nosotros</a>
-            <a>Medidas de seguridad (covid-19)</a>
-            <a>Cómo mercar</a>
-            <a>Proveedores</a>
-            <a>Contáctenos</a>
-            <a>Zona de cobertura</a>
+        
 
-            <img class="icon_fot" src="svg/instagram.svg" alt="instagram">
-            <a>Política de tratamiento de datos personales</a>
-            
-        </nav>
-        
-            
-        
     </footer>
 
+   
+
+    <script src="src/js/scripts.js"></script>
 </body>
 </html>

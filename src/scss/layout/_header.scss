@@ -1,0 +1,17 @@
+header {
+    background-color: black;
+    padding: 1rem 0 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    nav {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 1rem 0 1rem;
+    }
+    img {
+        filter: invert(1);
+        padding: .5rem;
+    }
+}
