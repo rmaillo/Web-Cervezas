@@ -13,15 +13,12 @@ fetch('products.json')
     })
     .catch(error => console.error('Error:', error));
 
-
-
-
 //Animación filtro
 
 document.addEventListener('DOMContentLoaded', function(){
     eventListeners();
     eventListeners2();
-    eventListeners3();
+    filterChecked();
 });
 
 //Mostrar formulario filtros
@@ -59,14 +56,46 @@ function closeFilter() {
     }
 }
 
+//Funcion fijado y limpieza checkboxes
+function filterChecked() {
 
-//Filtro para productos
+    //Constantes checkbox
+    const check1 = document.getElementById('1');
+    const check2 = document.getElementById('2');
+    const check3 = document.getElementById('3');
+    const clear = document.getElementById('clear');
 
-function eventListeners3() {
-    const filtro1 = document.getElementById('1');
-    filtro1.addEventListener('click', funciona);
-}
+    //Eventos checkbox
+    check1.addEventListener('change', filterChecked1);
+    check2.addEventListener('change', filterChecked2);
+    check3.addEventListener('change', filterChecked3);
+    clear.addEventListener('click', clearFilter);
 
-function funciona(){
-    alert("Funciona");
+    //Funciones checkbox
+    function filterChecked1 () {
+        if(this.checked) {
+            this.disabled=true;
+        }
+    }
+
+    function filterChecked2 () {
+        if(this.checked) {
+            this.disabled=true;
+        }
+    }
+
+    function filterChecked3 () {
+        if(this.checked) {
+            this.disabled=true;
+        }
+    }
+    
+    function clearFilter() {
+        check1.checked = false;
+        check2.checked = false;
+        check3.checked = false;
+        check1.disabled = false;
+        check2.disabled = false;
+        check3.disabled = false;
+    }
 }
