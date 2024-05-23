@@ -325,7 +325,7 @@ header img {
   padding: 0.5rem;
 }
 
-.btn-filter {
+#btnOpenFilter {
   align-items: center;
   background-color: blue;
   border: none;
@@ -343,7 +343,7 @@ header img {
   width: 30%;
   z-index: 5;
 }
-.btn-filter img {
+#btnOpenFilter img {
   filter: invert(1);
 }
 
@@ -461,62 +461,69 @@ footer .footer-about img {
   opacity: 0.5;
 }
 
-.form {
+.filter {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.5s ease-in-out, opacity 0.5s linear;
-  background-color: white;
   bottom: 0;
   position: fixed;
   width: 100%;
   z-index: 10;
 }
-.form fieldset {
+.filter fieldset {
+  background-color: white;
   border: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  width: 100%;
 }
-.form fieldset .form-title {
-  font-weight: bold;
-  font-size: 1.5rem;
-  padding: 1rem 0.5rem 0.5rem 0.5rem;
-}
-.form fieldset .text-form {
-  border-top: 1px solid lightgrey;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-}
-.form fieldset .text-form .form-check:checked {
-  background-color: blue;
-  color: white;
-}
-.form fieldset .text-form-last {
-  border-bottom: 1px solid lightgrey;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-}
-.form fieldset .btn-close-form {
+.filter fieldset legend {
+  background-color: white;
   border: 1px solid lightgrey;
   border-radius: 0.3rem;
-  font-weight: bold;
-  float: right;
-  height: 2rem;
-  margin-right: 1.5rem;
-  text-align: center;
-  width: 2rem;
+  display: flex;
+  height: 2.2rem;
+  justify-content: center;
+  margin-left: 85%;
+  width: 2.2rem;
 }
-.form fieldset legend {
+.filter fieldset legend button {
+  align-items: center;
+  background-color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+.filter fieldset legend button img {
+  width: 120%;
+}
+.filter fieldset h3 {
   font-size: 1.5rem;
   font-weight: bold;
+  margin: 0 1rem 1rem 1rem;
 }
-.form fieldset .form-btns {
+.filter fieldset .filterOptions {
+  border-top: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem 1rem 1rem;
+  padding-top: 1rem;
+}
+.filter fieldset .filterOptions .checkboxes {
+  width: 10%;
+}
+.filter fieldset .filterOptionsLast {
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 1rem;
+}
+.filter fieldset .filter-btns {
   background-color: lightgrey;
   display: flex;
   justify-content: space-around;
   padding: 1rem;
 }
-.form fieldset .form-btns .btn-clean-form {
+.filter fieldset .filter-btns .btnCleanForm {
   align-items: center;
   border: none;
   border-radius: 0.3rem;
@@ -527,9 +534,9 @@ footer .footer-about img {
   height: 1.8rem;
   text-align: center;
   text-transform: uppercase;
-  width: 30%;
+  width: 35%;
 }
-.form fieldset .form-btns .btn-filter-form {
+.filter fieldset .filter-btns .btnFilterForm {
   align-items: center;
   background-color: blue;
   border: none;
@@ -542,9 +549,9 @@ footer .footer-about img {
   height: 1.8rem;
   text-align: center;
   text-transform: uppercase;
-  width: 30%;
+  width: 35%;
 }
-.form fieldset .form-btns .btn-filter-form img {
+.filter fieldset .filter-btns .btnFilterForm img {
   filter: invert(1);
 }
 

@@ -3,66 +3,71 @@
     opacity: .5;
 }
 
-.form {
+.filter {
     visibility: hidden;
     opacity: 0;
     transition: visibility .5s ease-in-out, opacity .5s linear;
-    background-color: white;
     bottom: 0;
     position: fixed;
     width: 100%;
     z-index: 10;
     
     fieldset {
+        background-color: white;
         border: none;
-        padding: 0;
         margin: 0;
-        
-        .form-title {
-            font-weight: bold;
-            font-size: 1.5rem;
-            padding: 1rem .5rem .5rem .5rem;
-            
-        }
-            .text-form {
-                border-top: 1px solid lightgrey;
-                padding: .5rem;
-                display: flex;
-                justify-content: space-between;
-               
-                .form-check:checked {
-                    background-color: blue;
-                    color: white;
-                }
-            }
-            .text-form-last {
-                border-bottom: 1px solid lightgrey;
-                padding: .5rem;
-                margin-bottom: 1rem;
-            }
-        
-        
-        .btn-close-form {
+        padding: 0;
+        width: 100%;
+
+        legend {
+            background-color: white;
             border: 1px solid lightgrey;
             border-radius: .3rem;
-            font-weight: bold;
-            float: right;
-            height: 2rem;
-            margin-right: 1.5rem;
-            text-align: center;
-            width: 2rem;
+            display: flex;
+            height: 2.2rem;
+            justify-content: center;
+            margin-left: 85%;
+            width: 2.2rem;
+            button {
+                align-items: center;
+                background-color: white;
+                border: none;
+                display: flex;
+                justify-content: center;
+                width: 90%;
+                img {
+                    width: 120%;
+                }
+            } 
         }
-        legend {
+
+        h3 {
             font-size: 1.5rem;
             font-weight: bold;
+            margin: 0 1rem 1rem 1rem;
+        }
+        
+        .filterOptions {
+            border-top: 1px solid lightgrey;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 1rem 1rem 1rem;
+            padding-top: 1rem;
+            .checkboxes {
+                width: 10%;
+            }
+        }
+        .filterOptionsLast {
+            border-bottom: 1px solid lightgrey;
+            padding-bottom: 1rem;
         }
     
-        .form-btns {
+        .filter-btns {
             background-color: lightgrey;
             display: flex;
             justify-content: space-around;
             padding: 1rem;
-            .btn-clean-form {
+            .btnCleanForm {
                 align-items: center;
                 border: none;
                 border-radius: 0.3rem;
@@ -73,9 +78,9 @@
                 height: 1.8rem;
                 text-align: center;
                 text-transform: uppercase;
-                width: 30%;
+                width: 35%;
             }
-            .btn-filter-form {
+            .btnFilterForm {
                 align-items: center;
                 background-color: blue;
                 border: none;
@@ -88,13 +93,12 @@
                 height: 1.8rem;
                 text-align: center;
                 text-transform: uppercase;
-                width: 30%;
+                width: 35%;
                 img {
                     filter: invert(1);
                 }
             }
-        }
-        
+        }    
     }
 }
 

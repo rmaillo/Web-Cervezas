@@ -19,7 +19,7 @@
             </div>        
         </nav>
     </header>
-    <button class="btn-filter">Filtrar <img src="src/svg/filters.svg" alt="filters"></button>
+    <button id="btnOpenFilter" class="btn-filter">Filtrar <img src="src/svg/filters.svg" alt="filters"></button>
 
     <section class="section-prim">
         <h1>Cervezas</h1>
@@ -54,29 +54,27 @@
         </div>
     </section>
     <section>
-        <div class="form">
+        <div class="filter">
             <form  action="">
                 <fieldset>
-                    <div class="form-container">
-                        <legend class="btn-close-form">x</legend>
-                        <div class="form-title"><label for="text" >Filtros</label></div>
-                        <div class="text-form">
-                            <label for="text">Rubia</label>
-                            <input type="checkbox" class="form-check" id="1" value="filterId1">
-                        </div>
-                        <div class="text-form">
-                            <label for="text">Morena</label>
-                            <input type="checkbox" class="form-check" id="2" value="filterId2">
-                        </div>
-                        <div class="text-form text-form-last">
-                            <label for="text">Roja</label>
-                            <input type="checkbox" class="form-check" id="3" value="filterId3">
-                        </div>
+                    <legend  class="btn-close-form"><button type="button" id="btnCloseFilter"><img src="src/svg/close.svg" alt="close"></button></legend>
+                    <h3>Filtros</h3>
+                    <div class="filterOptions">
+                        <label for="text">Rubia</label>
+                        <input type="checkbox" id="checkbox1" class="checkboxes" value="1">
+                    </div>
+                    <div class="filterOptions">
+                        <label for="text">Morena</label>
+                        <input type="checkbox" id="checkbox2" class="checkboxes" value="2">
+                    </div>
+                    <div class="filterOptions filterOptionsLast">
+                        <label for="text">Roja</label>
+                        <input type="checkbox" id="checkbox3" class="checkboxes" value="3">
                     </div>
 
-                    <div class="form-btns">
-                        <button type="button" id="clear" class="btn-clean-form">Limpiar</button>
-                        <button type="button" class="btn-filter-form">Filtrar <img src="src/svg/filters.svg" alt="filters"></button>
+                    <div class="filter-btns">
+                        <button type="button" id="btnClean" class="btnCleanForm">Limpiar</button>
+                        <button type="button" id="btnFilter" class="btnFilterForm">Filtrar <img src="src/svg/filters.svg" alt="filters"></button>
                     </div>
                 </fieldset>
                 

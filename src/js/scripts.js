@@ -1,101 +1,132 @@
-//Inserción de productos
+// Inserción de productos
+document.addEventListener("DOMContentLoaded", function() {
+    // Capturar plantilla
+    var source = document.getElementById("products-template").innerHTML;
+    // Compilar plantilla
+    var template = Handlebars.compile(source);
+    // Array para todos los productos
+    var allProducts = [];
 
-var source = document.getElementById("products-template").innerHTML;
-    
-var template = Handlebars.compile(source);
-
-fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-        var html = template(data);
-        console.log(source);
+    // Obtener datos JSON
+    fetch('products.json')
+        .then(response => response.json())
+        .then(data => {
+            allProducts = data.products;
+            renderProducts(allProducts);
+        });
+        
+    // Función renderizar productos
+    function renderProducts(products) {
+        var html = template({products: products});
         document.getElementById("result").innerHTML = html;
-    })
-    .catch(error => console.error('Error:', error));
+    }
 
-//Animación filtro
+    // Función filtrado productos
+    document.getElementById('btnFilter').addEventListener('click', function() {
+        var selectedFilters = [];
+        document.querySelectorAll('.checkboxes:checked').forEach(function(checkbox) {
+            selectedFilters.push(parseInt(checkbox.value));
+        });
 
+        var filterProducts = allProducts.filter(function(product) {
+            return selectedFilters.includes(product.filterId);
+        });
+
+        //Renderizar productos filtrados
+        renderProducts(filterProducts);
+
+        // Eliminar clase mostrar filtro
+        document.querySelector('.filter').classList.remove('mostrar');
+    });
+
+    // Función botón limpiar filtros
+    document.getElementById('btnClean').addEventListener('click', function(event){
+        event.preventDefault();
+        document.querySelectorAll('.checkboxes').forEach(function(checkbox){
+            checkbox.checked = false;
+        });
+
+        // Renderizar todos los productos
+        renderProducts(allProducts);
+
+        // Eliminar clase mostrar filtros
+        document.querySelector('.filter').classList.remove('mostrar');
+
+    });
+});
+
+// Animación filtro
 document.addEventListener('DOMContentLoaded', function(){
-    eventListeners();
-    eventListeners2();
+    openFilter();
+    closeFilter();
     filterChecked();
 });
 
-//Mostrar formulario filtros
-function eventListeners() {
-    const botonFiltro = document.querySelector('.btn-filter');
-    botonFiltro.addEventListener('click', openFilter);
-}
-
+// Función desplegar filtro
 function openFilter() {
-    const openForm = document.querySelector('.form');
-    if (openForm.classList.contains('mostrar')) {
-        openForm.classList.remove('mostrar');
-    } else {
-        openForm.classList.add('mostrar');
-    }
+    const btnOpenFilter = document.querySelector('#btnOpenFilter');
+    const filter = document.querySelector('.filter');
+
+    // Función agregar o eliminar clase mostrar
+    btnOpenFilter.addEventListener('click', function() {
+        if(filter.classList.contains('mostrar')) {
+            filter.classList.remove('mostrar');
+        } else {
+            filter.classList.add('mostrar');
+        }
+    });
+}
     
-//Sombrear fondo    
+// Sombrear fondo    
     //const opacPag = document.querySelector('body');
     //opacPag.classList.add('sombrear');
-    
-}
 
-//Ocultar formulario filtros
-function eventListeners2() {
-    const btnCloseForm = document.querySelector('.btn-close-form');
-    btnCloseForm.addEventListener('click', closeFilter);
-}
-
+// Ocultar formulario filtros
 function closeFilter() {
-    const closeForm = document.querySelector('.form');
-    if (closeForm.classList.contains('mostrar')) {
-        closeForm.classList.remove('mostrar');
-    } else {
-        closeForm.classList.add('mostrar');
-    }
-}
+    const btnCloseFilter = document.querySelector('#btnCloseFilter');
+    const filter = document.querySelector('.filter');
+    btnCloseFilter.addEventListener('click', function() {
+        if (filter.classList.contains('mostrar')) {
+            filter.classList.remove('mostrar');
+        } else {
+            filter.classList.add('mostrar');
+        }
+    });
+} 
 
-//Funcion fijado y limpieza checkboxes
+// Funcion fijado y limpieza checkboxes
 function filterChecked() {
 
-    //Constantes checkbox
-    const check1 = document.getElementById('1');
-    const check2 = document.getElementById('2');
-    const check3 = document.getElementById('3');
-    const clear = document.getElementById('clear');
+    // Constantes checkbox
+    const check1 = document.getElementById('checkbox1');
+    const check2 = document.getElementById('checkbox2');
+    const check3 = document.getElementById('checkbox3');
+    const btnClean = document.getElementById('btnClean');
 
-    //Eventos checkbox
-    check1.addEventListener('change', filterChecked1);
-    check2.addEventListener('change', filterChecked2);
-    check3.addEventListener('change', filterChecked3);
-    clear.addEventListener('click', clearFilter);
+    // Eventos checkbox
+    // Marcar el checkbox disabled
+    check1.addEventListener('change', function() {
+            if(this.checked) {
+                this.disabled=true;
+        }
+    });
 
-    //Funciones checkbox
-    function filterChecked1 () {
+    check2.addEventListener('change', function() {
         if(this.checked) {
             this.disabled=true;
         }
-    }
-
-    function filterChecked2 () {
+    });
+    check3.addEventListener('change', function() {
         if(this.checked) {
             this.disabled=true;
         }
-    }
-
-    function filterChecked3 () {
-        if(this.checked) {
-            this.disabled=true;
-        }
-    }
-    
-    function clearFilter() {
+    });
+    btnClean.addEventListener('click', function() {
         check1.checked = false;
         check2.checked = false;
         check3.checked = false;
         check1.disabled = false;
         check2.disabled = false;
         check3.disabled = false;
-    }
+    });
 }
