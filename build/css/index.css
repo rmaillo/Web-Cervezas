@@ -308,7 +308,7 @@ template {
 }
 
 header {
-  background-color: black;
+  background-color: #000000;
   padding: 1rem 0 1rem 0;
   position: fixed;
   top: 0;
@@ -327,19 +327,20 @@ header img {
 
 #btnOpenFilter {
   align-items: center;
-  background-color: blue;
+  background-color: #0000ff;
   border: none;
   border-radius: 0.3rem;
   bottom: 0.5rem;
-  color: white;
+  color: #ffffff;
   display: flex;
   font-weight: bold;
   justify-content: center;
   height: 1.8rem;
+  left: 35%;
+  line-height: 0;
   position: fixed;
   text-align: center;
   text-transform: uppercase;
-  left: 35%;
   width: 30%;
   z-index: 5;
 }
@@ -359,18 +360,30 @@ section #result {
   gap: 1rem;
   margin: 1rem 2rem 2rem 1rem;
 }
+@media (min-width: 992px) {
+  section #result {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+  }
+}
+@media (min-width: 1200px) {
+  section #result {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+  }
+}
 section .product {
-  border: 1px solid lightgrey;
+  border: 1px solid #d3d3d3;
   border-radius: 0.3rem;
   display: grid;
 }
-section .product h3, section .product p {
+section .product h4, section .product p {
   margin: 0.5rem 1rem 0.5rem 1rem;
   height: 1.5rem;
 }
 section .product p {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.5rem;
   height: 4rem;
 }
 section .product img {
@@ -379,17 +392,18 @@ section .product img {
   max-width: 120px;
 }
 section .btn-agregar {
-  background-color: lightgrey;
+  background-color: #d3d3d3;
   border: none;
-  border-top: 1px solid lightgrey;
-  color: blue;
+  border-top: 1px solid #d3d3d3;
+  color: #0000ff;
+  font-weight: bold;
   text-transform: uppercase;
   height: 2rem;
 }
 
 .section-sec {
   align-items: center;
-  border: 1px solid lightgrey;
+  border: 1px solid #d3d3d3;
   border-radius: 0.3rem;
   display: flex;
   height: 4.5rem;
@@ -397,23 +411,20 @@ section .btn-agregar {
   margin: 1rem 1rem 3rem 1rem;
   padding: 0 1rem 0 1rem;
 }
-.section-sec h4 {
+.section-sec h5 {
   margin-bottom: 0.5rem;
 }
 .section-sec h2 {
   margin-top: 0.5rem;
 }
-.section-sec img {
-  color: blue;
-}
 
 footer {
-  background-color: black;
+  background-color: #000000;
   padding: 0.5rem 0 1rem 0;
   text-transform: uppercase;
 }
 footer .help {
-  color: white;
+  color: #ffffff;
   text-align: center;
 }
 footer .help h4 {
@@ -426,13 +437,13 @@ footer .help .footer-figure {
   margin-bottom: 1rem;
 }
 footer .help .footer-figure img {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 50%;
   margin-bottom: 0.5rem;
   padding: 1rem;
 }
 footer .footer-about {
-  background-color: white;
+  background-color: #ffffff;
   text-align: center;
 }
 footer .footer-about nav {
@@ -445,7 +456,7 @@ footer .footer-about nav a {
   padding: 0.5rem 0 0.5rem 0;
 }
 footer .footer-about .footer-insta {
-  border-top: 1px solid grey;
+  border-top: 1px solid #d3d3d3;
   margin-left: 33%;
   width: 33%;
 }
@@ -456,30 +467,29 @@ footer .footer-about img {
   margin-top: 1rem;
   padding: 0.5rem;
 }
+footer h6 {
+  padding-bottom: 0.5rem;
+}
 
 .sombrear {
   opacity: 0.5;
 }
 
 .filter {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.5s ease-in-out, opacity 0.5s linear;
-  bottom: 0;
   position: fixed;
   width: 100%;
   z-index: 10;
+  bottom: -375px;
 }
 .filter fieldset {
-  background-color: white;
+  background-color: #ffffff;
   border: none;
   margin: 0;
   padding: 0;
-  width: 100%;
 }
 .filter fieldset legend {
-  background-color: white;
-  border: 1px solid lightgrey;
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
   border-radius: 0.3rem;
   display: flex;
   height: 2.2rem;
@@ -489,7 +499,7 @@ footer .footer-about img {
 }
 .filter fieldset legend button {
   align-items: center;
-  background-color: white;
+  background-color: #ffffff;
   border: none;
   display: flex;
   justify-content: center;
@@ -504,7 +514,7 @@ footer .footer-about img {
   margin: 0 1rem 1rem 1rem;
 }
 .filter fieldset .filterOptions {
-  border-top: 1px solid lightgrey;
+  border-top: 1px solid #d3d3d3;
   display: flex;
   justify-content: space-between;
   margin: 0 1rem 1rem 1rem;
@@ -514,11 +524,11 @@ footer .footer-about img {
   width: 10%;
 }
 .filter fieldset .filterOptionsLast {
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #d3d3d3;
   padding-bottom: 1rem;
 }
 .filter fieldset .filter-btns {
-  background-color: lightgrey;
+  background-color: #d3d3d3;
   display: flex;
   justify-content: space-around;
   padding: 1rem;
@@ -527,37 +537,60 @@ footer .footer-about img {
   align-items: center;
   border: none;
   border-radius: 0.3rem;
-  bottom: 0.2rem;
   display: flex;
   font-weight: bold;
-  justify-content: center;
   height: 1.8rem;
+  justify-content: center;
+  line-height: 0;
   text-align: center;
   text-transform: uppercase;
-  width: 35%;
+  width: 8rem;
 }
 .filter fieldset .filter-btns .btnFilterForm {
   align-items: center;
-  background-color: blue;
+  background-color: #0000ff;
   border: none;
   border-radius: 0.3rem;
-  bottom: 0.2rem;
-  color: white;
+  color: #ffffff;
   display: flex;
   font-weight: bold;
-  justify-content: center;
   height: 1.8rem;
+  justify-content: center;
+  line-height: 0;
   text-align: center;
   text-transform: uppercase;
-  width: 35%;
+  width: 8rem;
 }
 .filter fieldset .filter-btns .btnFilterForm img {
   filter: invert(1);
 }
 
 .mostrar {
-  visibility: visible;
-  opacity: 1;
+  animation-name: mostrar;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes mostrar {
+  from {
+    bottom: -375px;
+  }
+  to {
+    bottom: 0rem;
+  }
+}
+
+.ocultar {
+  animation-name: ocultar;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes ocultar {
+  from {
+    bottom: 0rem;
+  }
+  to {
+    bottom: -375px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

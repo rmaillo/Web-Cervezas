@@ -1,3 +1,6 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
 //Seccion productos
 section {
     margin-top: 7rem;
@@ -10,19 +13,28 @@ section {
         grid-template-columns: repeat(2, 50%);
         gap: 1rem;
         margin: 1rem 2rem 2rem 1rem;
+
+        @include m.desktop {
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+        }
+
+        @include m.desktopXL {
+            display: grid;
+            grid-template-columns: repeat(5, 20%);
+        }
     }
     .product {
-        border: 1px solid lightgrey;
-        border-radius: .3rem;
+        @include m.borderBoxes;
         display: grid;
         
-        h3, p {
+        h4, p {
             margin: .5rem 1rem .5rem 1rem;
             height: 1.5rem;
         }
         p {
-            margin-top: 1rem;
-            margin-bottom: 2rem;
+            margin-top: 1.2rem;
+            margin-bottom: 1.5rem;
             height: 4rem;
         }
         img {
@@ -33,10 +45,11 @@ section {
         }
         .btn-agregar {
             //align-items: center;
-            background-color: lightgrey;
+            background-color: v.$terciary;
             border: none;
-            border-top: 1px solid lightgrey;
-            color: blue;
+            border-top: 1px solid v.$terciary;
+            color: v.$blue;
+            font-weight: bold;
             //justify-content: center;
             text-transform: uppercase;
             height: 2rem;
@@ -45,20 +58,16 @@ section {
 
 .section-sec {
     align-items: center;
-    border: 1px solid lightgrey;
-    border-radius: .3rem;
+    @include m.borderBoxes;
     display: flex;
     height: 4.5rem;
     justify-content: space-between;
     margin: 1rem 1rem 3rem 1rem;
     padding: 0 1rem 0 1rem;
-    h4 {
+    h5 {
         margin-bottom: 0.5rem;
     }
     h2 {
         margin-top: 0.5rem;
-    }
-    img {
-        color: blue;
     }
 }

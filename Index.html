@@ -24,7 +24,6 @@
     <section class="section-prim">
         <h1>Cervezas</h1>
 
-
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
 
         <script id="products-template" type="text/x-handlebars-template">
@@ -32,9 +31,9 @@
             {{#each products}}
             <div class="product">
                     <img src="src/img/{{img}}" alt="{{img}}">
-                    <h3>{{name}}</h3>
+                    <h4>{{name}}</h4>
                     <p>{{description}}</p>
-                    <h3>${{price}}</h3>  
+                    <h4>${{price}}</h4>  
                     <button class="btn-agregar">Agregar</button>
             </div>
             {{/each}}
@@ -46,7 +45,7 @@
     </section>
     <section class="section-sec">
         <div>
-            <h4>Sigue mercando</h4>
+            <h5>Sigue mercando</h5>
             <h2>Vinos</h2>
         </div>
         <div>
@@ -76,8 +75,7 @@
                         <button type="button" id="btnClean" class="btnCleanForm">Limpiar</button>
                         <button type="button" id="btnFilter" class="btnFilterForm">Filtrar <img src="src/svg/filters.svg" alt="filters"></button>
                     </div>
-                </fieldset>
-                
+                </fieldset>     
             </form>
         </div>
     </section>
@@ -109,13 +107,8 @@
                 <img src="src/svg/instagram.svg" alt="instagram">   
             </div>
             <h6>Política de tratamiento de datos personales</h6>
-        </div>
-
-        
-
+        </div>     
     </footer>
-
-   
 
     <script src="src/js/scripts.js"></script>
 </body>

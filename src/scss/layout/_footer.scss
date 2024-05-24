@@ -1,9 +1,12 @@
+@use '../base/variables' as v;
+
+//Footer
 footer {
-    background-color: black;
+    background-color: v.$secondary;
     padding: .5rem 0 1rem 0;
     text-transform: uppercase;
     .help {
-        color: white;
+        color: v.$primary;
         text-align: center;
         
         h4 {
@@ -15,7 +18,7 @@ footer {
             justify-content: center;
             margin-bottom: 1rem;
             img {
-                background-color: white;
+                background-color: v.$primary;
                 border-radius: 50%;
                 margin-bottom: .5rem;
                 padding: 1rem;
@@ -23,7 +26,7 @@ footer {
         }
     }
     .footer-about {
-        background-color: white;
+        background-color: v.$primary;
         text-align: center;
         nav {
             display: flex;
@@ -35,7 +38,7 @@ footer {
             }
         }
         .footer-insta {
-            border-top: 1px solid grey;
+            border-top: 1px solid v.$terciary;
             margin-left: 33%;
             width: 33%;
         }
@@ -46,5 +49,8 @@ footer {
             margin-top: 1rem;
             padding: .5rem;
         }
+    }
+    h6 {
+        padding-bottom: .5rem;
     }
 }

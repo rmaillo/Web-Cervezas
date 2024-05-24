@@ -1,0 +1,19 @@
+@use 'variables' as v;
+
+@mixin borderBoxes {
+    border: 1px solid v.$terciary;
+    border-radius: .3rem;
+}
+
+//Media Queries
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin desktopXL {
+    @media (min-width: v.$desktopXL) {
+        @content;
+    }
+}

@@ -1,19 +1,22 @@
-//Botón filtro
+@use '../base/variables' as v;
+
+//Buttons
 #btnOpenFilter {
     align-items: center;
-    background-color: blue;
+    background-color: v.$blue;
     border: none;
     border-radius: 0.3rem;
     bottom: .5rem;
-    color: white;
+    color: v.$primary;
     display: flex;
     font-weight: bold;
     justify-content: center;
     height: 1.8rem;
+    left: 35%;
+    line-height: 0;
     position: fixed;
     text-align: center;
     text-transform: uppercase;
-    left: 35%;
     width: 30%;
     z-index: 5;
     img {

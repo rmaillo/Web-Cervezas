@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Eliminar clase mostrar filtro
         document.querySelector('.filter').classList.remove('mostrar');
+        document.querySelector('.filter').classList.add('ocultar');
     });
 
     // Función botón limpiar filtros
@@ -51,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Eliminar clase mostrar filtros
         document.querySelector('.filter').classList.remove('mostrar');
+        document.querySelector('.filter').classList.add('ocultar');
 
     });
 });
@@ -73,6 +75,7 @@ function openFilter() {
             filter.classList.remove('mostrar');
         } else {
             filter.classList.add('mostrar');
+            filter.classList.remove('ocultar');
         }
     });
 }
@@ -88,6 +91,7 @@ function closeFilter() {
     btnCloseFilter.addEventListener('click', function() {
         if (filter.classList.contains('mostrar')) {
             filter.classList.remove('mostrar');
+            filter.classList.add('ocultar');
         } else {
             filter.classList.add('mostrar');
         }
