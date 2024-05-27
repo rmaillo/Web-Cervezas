@@ -307,6 +307,10 @@ template {
   display: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 header {
   background-color: #000000;
   padding: 1rem 0 1rem 0;
@@ -364,12 +368,6 @@ section #result {
   section #result {
     display: grid;
     grid-template-columns: repeat(4, 25%);
-  }
-}
-@media (min-width: 1200px) {
-  section #result {
-    display: grid;
-    grid-template-columns: repeat(5, 20%);
   }
 }
 section .product {

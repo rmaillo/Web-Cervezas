@@ -4,6 +4,7 @@
 //Seccion productos
 section {
     margin-top: 7rem;
+    //max-width: 100%;
     
     h1 {
         text-align: center;
@@ -19,10 +20,10 @@ section {
             grid-template-columns: repeat(4, 25%);
         }
 
-        @include m.desktopXL {
-            display: grid;
-            grid-template-columns: repeat(5, 20%);
-        }
+        //@include m.desktopXL {
+            //display: grid;
+           // grid-template-columns: repeat(5, 20%);
+        //}
     }
     .product {
         @include m.borderBoxes;
