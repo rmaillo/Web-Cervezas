@@ -307,8 +307,45 @@ template {
   display: none;
 }
 
-* {
+html {
+  font-size: 62.5%;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+a {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.6rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 1.3rem;
 }
 
 header {
@@ -338,8 +375,9 @@ header img {
   color: #ffffff;
   display: flex;
   font-weight: bold;
+  font-size: 1.6rem;
   justify-content: center;
-  height: 1.8rem;
+  height: 2.5rem;
   left: 35%;
   line-height: 0;
   position: fixed;
@@ -356,6 +394,7 @@ section {
   margin-top: 7rem;
 }
 section h1 {
+  margin-top: 8rem;
   text-align: center;
 }
 section #result {
@@ -370,6 +409,12 @@ section #result {
     grid-template-columns: repeat(4, 25%);
   }
 }
+@media (min-width: 1200px) {
+  section #result {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+  }
+}
 section .product {
   border: 1px solid #d3d3d3;
   border-radius: 0.3rem;
@@ -381,7 +426,7 @@ section .product h4, section .product p {
 }
 section .product p {
   margin-top: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.3rem;
   height: 4rem;
 }
 section .product img {
@@ -395,8 +440,9 @@ section .btn-agregar {
   border-top: 1px solid #d3d3d3;
   color: #0000ff;
   font-weight: bold;
+  font-size: 1.4rem;
   text-transform: uppercase;
-  height: 2rem;
+  height: 3rem;
 }
 
 .section-sec {
@@ -407,7 +453,7 @@ section .btn-agregar {
   height: 4.5rem;
   justify-content: space-between;
   margin: 1rem 1rem 3rem 1rem;
-  padding: 0 1rem 0 1rem;
+  padding: 2rem;
 }
 .section-sec h5 {
   margin-bottom: 0.5rem;
@@ -490,14 +536,14 @@ footer h6 {
   border: 1px solid #d3d3d3;
   border-radius: 0.3rem;
   display: flex;
-  height: 2.2rem;
+  height: 3.2rem;
   justify-content: center;
   margin-left: 85%;
-  width: 2.2rem;
+  width: 3.2rem;
 }
 .filter fieldset legend button {
   align-items: center;
-  background-color: #ffffff;
+  background-color: transparent;
   border: none;
   display: flex;
   justify-content: center;
@@ -507,13 +553,13 @@ footer h6 {
   width: 120%;
 }
 .filter fieldset h3 {
-  font-size: 1.5rem;
   font-weight: bold;
   margin: 0 1rem 1rem 1rem;
 }
 .filter fieldset .filterOptions {
   border-top: 1px solid #d3d3d3;
   display: flex;
+  font-size: 1.4rem;
   justify-content: space-between;
   margin: 0 1rem 1rem 1rem;
   padding-top: 1rem;
@@ -528,6 +574,7 @@ footer h6 {
 .filter fieldset .filter-btns {
   background-color: #d3d3d3;
   display: flex;
+  font-size: 1.6rem;
   justify-content: space-around;
   padding: 1rem;
 }
@@ -537,12 +584,12 @@ footer h6 {
   border-radius: 0.3rem;
   display: flex;
   font-weight: bold;
-  height: 1.8rem;
+  height: 2.5rem;
   justify-content: center;
   line-height: 0;
   text-align: center;
   text-transform: uppercase;
-  width: 8rem;
+  width: 11rem;
 }
 .filter fieldset .filter-btns .btnFilterForm {
   align-items: center;
@@ -552,12 +599,12 @@ footer h6 {
   color: #ffffff;
   display: flex;
   font-weight: bold;
-  height: 1.8rem;
+  height: 2.5rem;
   justify-content: center;
   line-height: 0;
   text-align: center;
   text-transform: uppercase;
-  width: 8rem;
+  width: 11rem;
 }
 .filter fieldset .filter-btns .btnFilterForm img {
   filter: invert(1);
@@ -588,6 +635,18 @@ footer h6 {
   }
   to {
     bottom: -375px;
+  }
+}
+
+.resaltar {
+  animation-name: resaltado;
+  animation-duration: 1s;
+}
+
+@keyframes resaltado {
+  from {
+    border: 2px solid #0000ff;
+    background-color: #add8e6;
   }
 }
 

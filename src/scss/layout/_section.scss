@@ -4,9 +4,9 @@
 //Seccion productos
 section {
     margin-top: 7rem;
-    //max-width: 100%;
     
     h1 {
+        margin-top: 8rem;
         text-align: center;
     }
     #result {
@@ -20,10 +20,10 @@ section {
             grid-template-columns: repeat(4, 25%);
         }
 
-        //@include m.desktopXL {
-            //display: grid;
-           // grid-template-columns: repeat(5, 20%);
-        //}
+        @include m.desktopXL {
+            display: grid;
+            grid-template-columns: repeat(5, 20%);
+        }
     }
     .product {
         @include m.borderBoxes;
@@ -35,7 +35,7 @@ section {
         }
         p {
             margin-top: 1.2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.3rem;
             height: 4rem;
         }
         img {
@@ -45,15 +45,14 @@ section {
             }
         }
         .btn-agregar {
-            //align-items: center;
             background-color: v.$terciary;
             border: none;
             border-top: 1px solid v.$terciary;
             color: v.$blue;
             font-weight: bold;
-            //justify-content: center;
+            font-size: 1.4rem;
             text-transform: uppercase;
-            height: 2rem;
+            height: 3rem;
         }
 }
 
@@ -64,7 +63,7 @@ section {
     height: 4.5rem;
     justify-content: space-between;
     margin: 1rem 1rem 3rem 1rem;
-    padding: 0 1rem 0 1rem;
+    padding: 2rem;
     h5 {
         margin-bottom: 0.5rem;
     }

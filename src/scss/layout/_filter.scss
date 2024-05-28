@@ -20,15 +20,16 @@
 
         legend {
             background-color: v.$primary;
+            
             @include m.borderBoxes;
             display: flex;
-            height: 2.2rem;
+            height: 3.2rem;
             justify-content: center;
             margin-left: 85%;
-            width: 2.2rem;
+            width: 3.2rem;
             button {
                 align-items: center;
-                background-color: v.$primary;
+                background-color: transparent;
                 border: none;
                 display: flex;
                 justify-content: center;
@@ -37,10 +38,10 @@
                     width: 120%;
                 }
             } 
+            
         }
 
         h3 {
-            font-size: 1.5rem;
             font-weight: bold;
             margin: 0 1rem 1rem 1rem;
         }
@@ -48,6 +49,7 @@
         .filterOptions {
             border-top: 1px solid v.$terciary;
             display: flex;
+            font-size: 1.4rem;
             justify-content: space-between;
             margin: 0 1rem 1rem 1rem;
             padding-top: 1rem;
@@ -63,6 +65,7 @@
         .filter-btns {
             background-color: v.$terciary;
             display: flex;
+            font-size: 1.6rem;
             justify-content: space-around;
             padding: 1rem;
             .btnCleanForm {
@@ -71,12 +74,12 @@
                 border-radius: 0.3rem;
                 display: flex;
                 font-weight: bold;
-                height: 1.8rem;
+                height: 2.5rem;
                 justify-content: center;
                 line-height: 0;
                 text-align: center;
                 text-transform: uppercase;
-                width: 8rem;
+                width: 11rem;
             }
             .btnFilterForm {
                 align-items: center;
@@ -86,12 +89,12 @@
                 color: v.$primary;
                 display: flex;
                 font-weight: bold;
-                height: 1.8rem;
+                height: 2.5rem;
                 justify-content: center;
                 line-height: 0;
                 text-align: center;
                 text-transform: uppercase;
-                width: 8rem;
+                width: 11rem;
                 img {
                     filter: invert(1);
                 }
@@ -119,4 +122,14 @@
         to {bottom: -375px;}
     }
 }
-    
+
+.resaltar {
+    //border: 2px solid red;
+    animation-name: resaltado;
+    animation-duration: 1s;
+}
+@keyframes resaltado {
+    from {border: 2px solid v.$blue;
+        background-color: v.$lightBlue;
+    }  
+}
