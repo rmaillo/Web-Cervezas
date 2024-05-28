@@ -40,36 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.filter').classList.add('ocultar');
     });
 
-    // Función botón limpiar filtros
-/*    document.getElementById('btnClean').addEventListener('click', function(event){
-        event.preventDefault();
-        document.querySelectorAll('.checkboxes').forEach(function(checkbox){
-           
-            if (checkbox.checked == true) {
-                checkbox.checked = false;
-                // Eliminar clase mostrar filtros
-                document.querySelector('.filter').classList.remove('mostrar');
-                document.querySelector('.filter').classList.add('ocultar');
-            } else {
-                btnCloseResalt = document.querySelector('legend');
-                btnCloseResalt.classList.add('resaltar');
-
-                oo = document.getElementById('oo');
-                oi = document.getElementById('oi');
-                ou = document.getElementById('ou'); 
-                oo.classList.add('resaltar');
-                oi.classList.add('resaltar');
-                ou.classList.add('resaltar');
-                
-                setTimeout(function(){
-                    btnCloseResalt.classList.remove('resaltar');
-                    oo.classList.remove('resaltar');
-                    oi.classList.remove('resaltar');
-                    ou.classList.remove('resaltar');
-                }, 100);
-            }          
-        });
-*/
         // Función botón limpiar filtros
         document.getElementById('btnClean').addEventListener('click', function(event) {
             event.preventDefault();
@@ -96,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
             renderProducts(allProducts);
         });
     });
-//});
 
 // Animación filtro
 document.addEventListener('DOMContentLoaded', function(){
