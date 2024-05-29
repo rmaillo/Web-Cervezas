@@ -51,15 +51,17 @@
             display: flex;
             font-size: 1.4rem;
             justify-content: space-between;
-            margin: 0 1rem 1rem 1rem;
+            margin: 0 1rem 0 1rem;
+            padding-bottom: 1rem;
             padding-top: 1rem;
             .checkboxes {
                 width: 10%;
             }
         }
-        .filterOptionsLast {
-            border-bottom: 1px solid v.$terciary;
-            padding-bottom: 1rem;
+        .filter-options-last {
+            border-top: 1px solid v.$terciary;
+            margin: 0 1rem 1rem 1rem;
+            height: .5rem;
         }
     
         .filter-btns {

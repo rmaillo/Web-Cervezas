@@ -21,18 +21,33 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("result").innerHTML = html;
     }
 
-    // Función filtrado productos
+    // Función botón filtrado productos
     document.getElementById('btnFilter').addEventListener('click', function() {
         var selectedFilters = [];
+        
         document.querySelectorAll('.checkboxes:checked').forEach(function(checkbox) {
             selectedFilters.push(parseInt(checkbox.value));
         });
+
+        // Comprueba que hay almenos un checkbox seleccionado
+        if (selectedFilters.length === 0) {
+            const btnCloseResalt = document.querySelector('legend');
+
+            btnCloseResalt.classList.add('resaltar');
+                    document.querySelectorAll('.filterOptions').forEach(option => option.classList.add('resaltar'));
+        
+                    setTimeout(function() {
+                        btnCloseResalt.classList.remove('resaltar');
+                        document.querySelectorAll('.filterOptions').forEach(option => option.classList.remove('resaltar'));
+                        }, 100);
+            return; // Finaliza codigo si no hay checkboxes seleccionados
+        }
 
         var filterProducts = allProducts.filter(function(product) {
             return selectedFilters.includes(product.filterId);
         });
 
-        //Renderizar productos filtrados
+        // Renderizar productos filtrados
         renderProducts(filterProducts);
 
         // Eliminar clase mostrar filtro
@@ -53,15 +68,16 @@ document.addEventListener("DOMContentLoaded", function() {
                     filter.classList.remove('mostrar');
                     filter.classList.add('ocultar');
                 } else {
-                        btnCloseResalt.classList.add('resaltar');
-                        document.querySelectorAll('.filterOptions').forEach(option => option.classList.add('resaltar'));
+                    btnCloseResalt.classList.add('resaltar');
+                    document.querySelectorAll('.filterOptions').forEach(option => option.classList.add('resaltar'));
         
-                        setTimeout(function() {
-                                btnCloseResalt.classList.remove('resaltar');
-                                document.querySelectorAll('.filterOptions').forEach(option => option.classList.remove('resaltar'));
-                                }, 100);
-                        }
+                    setTimeout(function() {
+                        btnCloseResalt.classList.remove('resaltar');
+                        document.querySelectorAll('.filterOptions').forEach(option => option.classList.remove('resaltar'));
+                        }, 100);
+                    }
             });
+
             // Renderizar todos los productos
             renderProducts(allProducts);
         });

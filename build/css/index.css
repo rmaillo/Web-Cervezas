@@ -406,13 +406,13 @@ section #result {
 @media (min-width: 992px) {
   section #result {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 24.7%);
   }
 }
 @media (min-width: 1200px) {
   section #result {
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(5, 19.7%);
   }
 }
 section .product {
@@ -561,15 +561,17 @@ footer h6 {
   display: flex;
   font-size: 1.4rem;
   justify-content: space-between;
-  margin: 0 1rem 1rem 1rem;
+  margin: 0 1rem 0 1rem;
+  padding-bottom: 1rem;
   padding-top: 1rem;
 }
 .filter fieldset .filterOptions .checkboxes {
   width: 10%;
 }
-.filter fieldset .filterOptionsLast {
-  border-bottom: 1px solid #d3d3d3;
-  padding-bottom: 1rem;
+.filter fieldset .filter-options-last {
+  border-top: 1px solid #d3d3d3;
+  margin: 0 1rem 1rem 1rem;
+  height: 0.5rem;
 }
 .filter fieldset .filter-btns {
   background-color: #d3d3d3;
