@@ -81,7 +81,7 @@
                 line-height: 0;
                 text-align: center;
                 text-transform: uppercase;
-                width: 11rem;
+                width: 13rem;
             }
             .btnFilterForm {
                 align-items: center;
@@ -96,7 +96,7 @@
                 line-height: 0;
                 text-align: center;
                 text-transform: uppercase;
-                width: 11rem;
+                width: 13rem;
                 img {
                     filter: invert(1);
                 }
@@ -105,6 +105,8 @@
     }
 }
 
+
+// Clases funciones
 .mostrar {
     animation-name: mostrar;
     animation-duration: 1s;
@@ -134,4 +136,12 @@
     from {border: 2px solid v.$blue;
         background-color: v.$lightBlue;
     }  
+}
+
+body.blockScroll {
+    overflow: hidden;
+}
+
+.selectionNone {
+    display: none;
 }

@@ -378,12 +378,12 @@ header img {
   font-size: 1.6rem;
   justify-content: center;
   height: 2.5rem;
-  left: 35%;
+  left: 30%;
   line-height: 0;
   position: fixed;
   text-align: center;
   text-transform: uppercase;
-  width: 30%;
+  width: 40%;
   z-index: 5;
 }
 #btnOpenFilter img {
@@ -591,7 +591,7 @@ footer h6 {
   line-height: 0;
   text-align: center;
   text-transform: uppercase;
-  width: 11rem;
+  width: 13rem;
 }
 .filter fieldset .filter-btns .btnFilterForm {
   align-items: center;
@@ -606,7 +606,7 @@ footer h6 {
   line-height: 0;
   text-align: center;
   text-transform: uppercase;
-  width: 11rem;
+  width: 13rem;
 }
 .filter fieldset .filter-btns .btnFilterForm img {
   filter: invert(1);
@@ -650,6 +650,13 @@ footer h6 {
     border: 2px solid #0000ff;
     background-color: #add8e6;
   }
+}
+body.blockScroll {
+  overflow: hidden;
+}
+
+.selectionNone {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */
