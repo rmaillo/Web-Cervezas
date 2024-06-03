@@ -128,12 +128,12 @@
 }
 
 .resaltar {
-    //border: 2px solid red;
     animation-name: resaltado;
     animation-duration: 1s;
 }
 @keyframes resaltado {
     from {border: 2px solid v.$blue;
+        border-radius: .3rem;
         background-color: v.$lightBlue;
     }  
 }

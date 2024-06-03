@@ -14,16 +14,17 @@ document.addEventListener("DOMContentLoaded", function() {
             allProducts = data.products;
 
             // Restaurar filtros localStorage
-            const savedFilters = JSON.parse(localStorage.getItem('selectedFilters'));
-            if (savedFilters && savedFilters.length > 0) {
+            const SAVED_FILTERS = JSON.parse(localStorage.getItem('selectedFilters'));
+            if (SAVED_FILTERS && SAVED_FILTERS.length > 0) {
                 // Marcar los checkboxes guardados
-                savedFilters.forEach(filterId => {
+                SAVED_FILTERS.forEach(filterId => {
                     document.querySelector(`.checkboxes[value="${filterId}"]`).checked = true;
+                    document.querySelector(`.checkboxes[value="${filterId}"]`).disabled = true;
                 });
 
                  // Filtrar productos
                  var filterProducts = allProducts.filter(function(product) {
-                    return savedFilters.includes(product.filterId);
+                    return SAVED_FILTERS.includes(product.filterId);
                 });
 
                 // Renderizar productos filtrados
@@ -63,17 +64,20 @@ document.addEventListener("DOMContentLoaded", function() {
         if (selectedFilters.length > 0) {
             btnOpenFilter.innerHTML += añadido + '(' + selectedFilters.length +')';
             btnFilter.innerHTML += añadido + '(' + selectedFilters.length + ')';
-        } 
+        } else {
+            btnOpenFilter.innerHTML += añadido;
+            btnFilter.innerHTML += añadido;
+        }
 
         // Comprobar que hay almenos un checkbox seleccionado
         if (selectedFilters.length === 0) {
-            const btnCloseResalt = document.querySelector('legend');
+            const BTN_RESALT = document.querySelector('legend');
 
-            btnCloseResalt.classList.add('resaltar');
+            BTN_RESALT.classList.add('resaltar');
                     document.querySelectorAll('.filterOptions').forEach(option => option.classList.add('resaltar'));
         
                     setTimeout(function() {
-                        btnCloseResalt.classList.remove('resaltar');
+                        BTN_RESALT.classList.remove('resaltar');
                         document.querySelectorAll('.filterOptions').forEach(option => option.classList.remove('resaltar'));
                         }, 100);
             return; // Finalizar codigo si no hay checkboxes seleccionados
@@ -188,39 +192,19 @@ function closeFilter() {
 
 // Funcion fijado y limpieza checkboxes
 function filterChecked() {
-
-    // Constantes checkbox
-    const check1 = document.getElementById('checkbox1');
-    const check2 = document.getElementById('checkbox2');
-    const check3 = document.getElementById('checkbox3');
+    const checkboxes = document.querySelectorAll('.checkboxes'); 
     const btnClean = document.getElementById('btnClean');
 
-    // Eventos checkbox
-    // Marcar el checkbox disabled
-    check1.addEventListener('change', function() {
-            if(this.checked) {
-                this.disabled=true;
-        }
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            this.disabled = this.checked;
+        });
     });
 
-    check2.addEventListener('change', function() {
-        if(this.checked) {
-            this.disabled=true;
-        }
-    });
-    check3.addEventListener('change', function() {
-        if(this.checked) {
-            this.disabled=true;
-        }
-    });
     btnClean.addEventListener('click', function() {
-
-        check1.checked = false;
-        check2.checked = false;
-        check3.checked = false;
-        check1.disabled = false;
-        check2.disabled = false;
-        check3.disabled = false;
-        
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+            checkbox.disabled = false;
+        });
     });
 }
