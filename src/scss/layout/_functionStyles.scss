@@ -1,0 +1,60 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+// Clases funciones
+.mostrar {
+    animation-name: mostrar;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    @keyframes mostrar {
+        from {bottom: -375px;}
+        to {bottom: 0rem;}
+    }
+}
+
+.ocultar {
+    animation-name: ocultar;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    @keyframes ocultar {
+        from {bottom: 0rem;}
+        to {bottom: -375px;}
+    }
+}
+
+.resaltar {
+    animation-name: resaltado;
+    animation-duration: 1s;
+}
+@keyframes resaltado {
+    from {border: 2px solid v.$blue;
+        border-radius: .3rem;
+        background-color: v.$lightBlue;
+    }  
+}
+
+body.blockScroll {
+    overflow: hidden;
+}
+
+.selectionNone {
+    display: none;
+}
+
+.shadowBox {
+    background-color: v.$secondary;
+    height: 100%;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+.shadowAsset {
+    visibility: visible;
+}
+
+.shadowIdle {
+    visibility: hidden;
+}

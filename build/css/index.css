@@ -389,6 +389,12 @@ header img {
 #btnOpenFilter img {
   filter: invert(1);
 }
+@media (min-width: 780px) {
+  #btnOpenFilter {
+    left: 42%;
+    width: 16%;
+  }
+}
 
 section {
   margin-top: 7rem;
@@ -658,6 +664,24 @@ body.blockScroll {
 
 .selectionNone {
   display: none;
+}
+
+.shadowBox {
+  background-color: #000000;
+  height: 100%;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+.shadowAsset {
+  visibility: visible;
+}
+
+.shadowIdle {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=index.css.map */

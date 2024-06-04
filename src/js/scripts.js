@@ -97,25 +97,32 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.filter').classList.remove('mostrar');
         document.querySelector('body').classList.remove('blockScroll');
         document.querySelector('.filter').classList.add('ocultar');
+        document.querySelector('.shadowBox').classList.remove('shadowAsset');
+        document.querySelector('.shadowBox').classList.add('shadowIdle');
+        
     });
 
     // Función botón limpiar filtros
     document.getElementById('btnClean').addEventListener('click', function(event) {
         event.preventDefault();
-        const checkboxes = document.querySelectorAll('.checkboxes');
-        const filter = document.querySelector('.filter');
-        const body = document.body;
+        const CHECKBOXES = document.querySelectorAll('.checkboxes');
+        const FILTER = document.querySelector('.filter');
+        const BODY = document.body;
         const btnCloseResalt = document.querySelector('legend');
+        const SHADOWBOX = document.querySelector('.shadowBox');
+
         // Obtén el elemento del botón
         var btnOpenFilter = document.getElementById('btnOpenFilter');
         var btnFilter = document.getElementById('btnFilter');
         
-        checkboxes.forEach(function(checkbox) {
+        CHECKBOXES.forEach(function(checkbox) {
             if (checkbox.checked) {
                 checkbox.checked = false;
-                filter.classList.remove('mostrar');
-                body.classList.remove('blockScroll'); 
-                filter.classList.add('ocultar');
+                FILTER.classList.remove('mostrar');
+                BODY.classList.remove('blockScroll'); 
+                FILTER.classList.add('ocultar');
+                SHADOWBOX.classList.add('shadowIdle');
+                SHADOWBOX.classList.remove('shadowAsset');
 
             // Resetear el contenido boton Filtrar
             btnOpenFilter.textContent = '';
@@ -157,18 +164,22 @@ document.addEventListener('DOMContentLoaded', function(){
 // Función desplegar filtro
 function openFilter() {
     const btnOpenFilter = document.querySelector('#btnOpenFilter');
-    const filter = document.querySelector('.filter');
-    const body =document.body;
+    const FILTER = document.querySelector('.filter');
+    const SHADOWBOX = document.querySelector('.shadowBox');
+    const BODY =document.body;
 
     // Función agregar o eliminar clase mostrar
     btnOpenFilter.addEventListener('click', function() {
-        if(filter.classList.contains('mostrar')) {
-            filter.classList.remove('mostrar');
-            body.classList.remove('blockScroll');
+        if(FILTER.classList.contains('mostrar')) {
+            FILTER.classList.remove('mostrar');
+            BODY.classList.remove('blockScroll');
+            SHADOWBOX.classList.remove('shadowIdle');
         } else {
-            filter.classList.add('mostrar');
-            body.classList.add('blockScroll');
-            filter.classList.remove('ocultar');
+            FILTER.classList.add('mostrar');
+            BODY.classList.add('blockScroll');
+            FILTER.classList.remove('ocultar');
+            SHADOWBOX.classList.add('shadowAsset');
+            SHADOWBOX.classList.remove('shadowIdle');
         }
     });
 }
@@ -176,33 +187,37 @@ function openFilter() {
 // Ocultar formulario filtros
 function closeFilter() {
     const btnCloseFilter = document.querySelector('#btnCloseFilter');
-    const filter = document.querySelector('.filter');
-    const body =document.body;
+    const FILTER = document.querySelector('.filter');
+    const BODY =document.body;
+    const SHADOWBOX = document.querySelector('.shadowBox');
     
     btnCloseFilter.addEventListener('click', function() {
-        if (filter.classList.contains('mostrar')) {
-            filter.classList.remove('mostrar');
-            body.classList.remove('blockScroll');
-            filter.classList.add('ocultar');
+        if (FILTER.classList.contains('mostrar')) {
+            FILTER.classList.remove('mostrar');
+            BODY.classList.remove('blockScroll');
+            FILTER.classList.add('ocultar');
+            SHADOWBOX.classList.remove('shadowAsset');
+            SHADOWBOX.classList.add('shadowIdle');
         } else {
-            filter.classList.add('mostrar');
+            FILTER.classList.add('mostrar');
+            
         }
     });
 } 
 
 // Funcion fijado y limpieza checkboxes
 function filterChecked() {
-    const checkboxes = document.querySelectorAll('.checkboxes'); 
+    const CHECKBOXES = document.querySelectorAll('.checkboxes'); 
     const btnClean = document.getElementById('btnClean');
 
-    checkboxes.forEach(checkbox => {
+    CHECKBOXES.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
             this.disabled = this.checked;
         });
     });
 
     btnClean.addEventListener('click', function() {
-        checkboxes.forEach(checkbox => {
+        CHECKBOXES.forEach(checkbox => {
             checkbox.checked = false;
             checkbox.disabled = false;
         });
